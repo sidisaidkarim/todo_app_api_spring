@@ -1,11 +1,14 @@
 spring:
+  profiles:
+    active: prod
   security:
     oauth2:
       resourceserver:
         jwt:
           issuer-uri: http://ci.check-consulting.net:10000/auth/realms/staff-manager-collab
-#          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
 jwt:
   auth:
     converter:
       resource-id: staff-manager-client
+
+
