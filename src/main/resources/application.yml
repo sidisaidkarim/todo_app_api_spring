@@ -3,9 +3,9 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://7c37-18-234-144-201.ngrok-free.app/auth/realms/Todo-app
-          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+          issuer-uri: http://ci.check-consulting.net:10000/auth/realms/staff-manager-collab
+#          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
 jwt:
   auth:
     converter:
-      resource-id: todo-app-client
+      resource-id: staff-manager-client
