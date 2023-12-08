@@ -25,7 +25,11 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authorizeHttpRequests ->
-                        authorizeHttpRequests.anyRequest().authenticated());
+                        authorizeHttpRequests.requestMatchers("/api/todo/**", "/api/auth/**").authenticated()
+                        )
+                .authorizeHttpRequests(authorizeHttpRequests ->
+                        authorizeHttpRequests.anyRequest().permitAll()
+                );
 
         // utiliser l'authentification avec jwt
         http
